@@ -1,0 +1,154 @@
+/*
+ * Original Pulsing Implementation
+ * Very rigid and seems like it's more computationally intensive than Transform
+ */
+@keyframes pulse {
+  0%    {width: 80px; height: 80px; top:20px; left:20px; opacity:  0;}
+  50%   {width:100px; height:100px; top:10px; left:10px; opacity:0.8;}
+  100%  {width:120px; height:120px; top: 0px; left: 0px; opacity:  0;}
+}
+/*
+ * Second Pulsing Implemenation
+ * Completely Smooth and doesn't seeem to affect container size at all
+ */
+@keyframes pulse2 {
+  from {transform: scale(0.6); opacity: 0;}
+  50%  {transform: scale(0.8); opacity: 0.8;}
+  to   {transform: scale(1);   opacity: 0;}
+}
+
+@keyframes pulse3 {
+  from {transform: scale(0.2); opacity: 0;}
+  50%  {transform: scale(0.6); opacity: 0.8;}
+  to   {transform: scale(1);   opacity: 0;}
+}
+
+.halfcircle-outer {
+  width:116px;
+  height:116px;
+  animation-name: rotate;
+}
+.halfcircle-outer:before,.halfcircle-outer:after {
+  content: '';
+  display:block;
+  width: 116px;
+  height:58px;
+}
+
+.halfcircle-outer:before {
+  border-radius: 116px 116px 0px 0px;
+  background: linear-gradient(to right, rgba(255,156,41,0), rgba(255,156,41,1));
+  animation-direction: normal;
+}
+
+.halfcircle-outer:after {
+  border-radius: 0px 0px 116px 116px;
+  background: linear-gradient(to left, rgba(255,156,41,0), rgba(255,156,41,1));
+  transform: translate(0px, -100px); /* */
+}
+
+.halfcircle-inner {
+  width:100px;
+  height:100px;
+  background:rgb(105,105,105);
+  position:relative;
+  border-radius:50%;
+  transform: translate(8px, -50px);
+  z-index: 1;
+}
+
+.resizing-container {
+  width: 120px;
+  height:120px;
+  position:relative;
+}
+
+.resizing-circle::before,
+.resizing-circle::after,  
+.inner-resizing-circle::before,
+.inner-resizing-circle::after{
+  border-radius:50%;
+  
+  position: absolute;
+  display:  block;
+  width:    120px;
+  height:   120px;
+}
+
+.resizing-circle::before {
+  content:"";
+  background:   radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(220, 220, 80, .8) 80%);
+
+  z-index:2;
+
+  animation-delay: -1s;
+}
+
+.resizing-circle::after {
+  content:"";
+  background: radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(220, 80, 220, .8) 80%);
+  z-index:3;
+
+  animation-delay: 0s;
+}
+
+.inner-resizing-circle::before {
+  content:"";
+  background:   radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(220, 140, 80, .8) 80%);
+  z-index: 4;
+
+  animation-delay: -2s;
+}
+
+.inner-resizing-circle::after {
+  content:"";
+  background:   radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(80, 220, 140, .8) 80%);
+  z-index: 5;
+
+  animation-delay: -3s;
+}
+
+.pulse2-animation {
+  animation-name: pulse2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.pulse3-animation {
+  animation-name: pulse3;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.pulse-circle {
+  content:"";
+  border-radius:50%;
+
+  position: absolute;
+  display:  block;
+  width:    80px;
+  height:   80px;
+  top:      20px;
+  left:     20px;
+
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.an1 {
+  background: radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(80, 220, 220, .8) 80%);
+}
+
+.an2 {
+  background: radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(220, 220, 80, .8) 80%);
+  animation-delay: -1s;
+}
+
+.an3 {
+  background: radial-gradient( circle, rgba(0,0,0,0) 55%, rgba(220, 80, 220, .8) 80%);
+  animation-delay: -2s;
+}

@@ -1,0 +1,39 @@
+body {
+	background : rgba(0,0,0, .6);
+	width:100vw;
+	height:100vh;
+	margin: 0px;
+	overflow:hidden;
+}
+
+.page {
+	width:100%;
+	height:80%;
+}
+
+/*NOTE: Flex is fudged, When using columns, align and 
+ *      justify flip what they normally do*/
+
+.flex-wrap-column {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.true-center {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.equal-space {
+	display:flex;
+	align-items: center;
+	align-content:space-around;
+	justify-content: space-around;
+}
+
+.text-header {
+	font-size: 24pt;
+	font-family: "Lucida Console";
+}

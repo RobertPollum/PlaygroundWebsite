@@ -1,0 +1,121 @@
+/**Animations**/
+@keyframes left-to-right {
+  0%    {left: -60px; top: 0px;}
+  100%  {left: 400px; top:0px;}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes gradrotate {
+  from  {background:  linear-gradient(to right, rgba(255,156,41,.1), rgba(255,156,41,.9));}
+  /*25%  {background:  linear-gradient(to right bottom, rgba(255,156,41,.1), rgba(255,156,41,.9));}
+  50%  {background:  linear-gradient(to left bottom, rgba(255,156,41,.1), rgba(255,156,41,.9));}
+  75%  {background:  linear-gradient(to left top, rgba(255,156,41,.1), rgba(255,156,41,.9));} */
+  to {background:  linear-gradient(to left, rgba(255,156,41,.1), rgba(255,156,41,.9));}
+}
+
+.direction-switch {
+  transform: rotate(180deg);
+}
+
+.bar-container {
+  border-radius: 6px;
+  width: 400px;
+  height: 20px;
+  background: grey;
+  overflow: hidden;
+  margin:auto;
+}
+
+.moving-gradient {
+  position: relative;
+  display:flex;
+  background: linear-gradient(to right, rgba(80, 220, 220, 0),rgba(80, 220, 220, .8) 85%);
+  height: 20px;
+  width: 60px;
+  animation-name: left-to-right;
+}
+
+.bground {
+  width: 100vw;
+  height: 100vh;
+  background : rgba(0,0,0, .6);
+}
+
+.circle {
+  border-radius: 50%;
+  animation-name: rotate;
+  margin:auto;
+}
+
+.outer {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to right, rgba(80, 220, 220, 0),rgba(80, 220, 220, .8));
+}
+
+.inner {
+  width: 38px;
+  height: 38px;
+  background : rgba(0,0,0, .8);
+}
+
+.true-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.on-my-level {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 49vw;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.flex-item {
+  margin: 5px;
+}
+
+.halfcircle {
+  width:116px;
+  height:116px;
+  animation-name: rotate;
+
+}
+.halfcircle:before,.halfcircle:after {
+  content: '';
+  display:block;
+  width: 100px;
+  height:50px;
+  background: rgba(0,0,0,0);
+  border-style: solid;
+}
+
+.halfcircle:before {
+  border-radius: 100px 100px 0px 0px;
+  border-width: 8px 8px 0px 8px;
+  border-color: rgba(255,156,41,.9);
+  animation-direction: normal;
+}
+
+.halfcircle:after {
+  border-radius: 0px 0px 100px 100px;
+  border-width: 0px 8px 8px 8px;
+  border-color: rgba(255,156,41,.1);
+  animation-direction: reverse;
+}

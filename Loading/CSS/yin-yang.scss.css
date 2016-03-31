@@ -1,0 +1,85 @@
+
+/*
+*,
+*:before,
+*:after {
+  opacity: 0.75;
+}
+*/
+
+body { background-color: grey; }
+
+.yin-yang {
+  box-sizing: border-box;
+  border-color: transparent;
+  /* border-color: blue green red yellow; */
+  /* border-color: black white white black; */
+  /* border-color: black white black white; */
+  /* border-color: white white black black; */
+  border-color: black black white white; 
+  border-width: 1em;
+  border-style: solid;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: block;
+  transform: rotate( 45deg );
+  
+  animation-name: outer-cc;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}  
+
+.yin-yang:before,
+.yin-yang:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  
+  transform-origin: 0em 0em; /* there might be a better way */
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-width: 0.35em;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.yin-yang:before {
+  background-color: black;
+  animation-name: inner1-cw;
+  border-color: white;
+}
+
+.yin-yang:after {
+  background-color: white;
+  animation-name: inner2-cw;
+  border-color: black;
+}
+
+
+
+@keyframes outer-cc {
+    0% { transform: rotate(    0deg ); } /*  0.5em */
+  100% { transform: rotate( -360deg ); } /*  0.5em */
+}
+
+/* for the innerX-cw keyframes, removing transform origin might make this simpler */
+
+@keyframes inner1-cw {
+  from { transform: rotate( -45deg ) translate( 0.0em, 0.5em ) rotate(   0deg ) translate( -0.5em, -0.5em ); }
+  to   { transform: rotate( -45deg ) translate( 0.0em, 0.5em ) rotate( 360deg ) translate( -0.5em, -0.5em ); }
+}
+
+@keyframes inner2-cw {
+  from { transform: rotate( -45deg ) translate( 0.0em, -0.5em ) rotate(   0deg ) translate( -0.5em, -0.5em ); }
+  to   { transform: rotate( -45deg ) translate( 0.0em, -0.5em ) rotate( 360deg ) translate( -0.5em, -0.5em ); }
+}
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Under Penalty - Loading Bars</title>
+	</head>
+	<links>
+		<link rel="stylesheet" type="text/css" href="CSS/loading.css">
+	</links>
+	<scripts>
+		<script src="/Resources/jsLibraries/jquery-2.2.0.js"></script>
+		<script src="/Resources/JavaScript/navLoader.js"></script>
+		<script src="JavaScript/loading.js"></script>
+	</scripts>
+	<body class="bground">
+		<div id="navMenu"></div>
+		<div class="page equal-space"> 
+			<div id="bar-container" class="bar-container">
+				<div id="moving-box" class="moving-gradient animate"></div>
+			</div>
+			<div id="circleSpinner" class="circle outer true-center">
+				<div class="circle inner"></div>
+			</div>
+			<button class="" onclick="animationToggle('#circleSpinner')">Circle Loader</button>
+		</div>
+	</body>
+</html>

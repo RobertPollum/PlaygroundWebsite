@@ -1,0 +1,74 @@
+
+/*.btn & .btn:hover copied from W3 Schools Anchor Link Button
+.btn, .btn:link, .btn:visited {
+	color:#FFFFFF;
+	background-color:rgba(203,78,245,.8);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	border-radius:6px;
+	padding:10px;
+	cursor:pointer;
+}
+
+.btn:hover, .btn:active {
+	background-color:#FFFFFF;
+	color: rgba(203,78,245,.8);;
+	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn {
+	transition: all 0.5s ease;
+	text-decoration: none;
+	max-width: 200px;
+	text-align: center;
+	width: auto;
+	height: auto;
+}
+
+/*.flex-item {
+  border-radius: 20%;
+  padding: 10px;
+  background-color: rgba(203,78,245,.8);'
+  height: 80px;
+  width: 160px;
+  display:inline-block;
+  text-align:center;
+}*/
+
+
+/*Below is a shot at na expanding circle button although it should be retitled
+  since just circle button is deceiving
+
+  Note To Self: Transition are ridiculously powerful, make good use of them in yer animations
+
+ */
+.circle-btn, .circle-btn:link, 
+.circle-btn:visited {
+	color:#FFFFFF;
+	border-radius:50%;
+	width:50px;
+	height:50px;
+	background-color: rgba(203,78,245,.8);
+	cursor:pointer;
+
+}
+
+.circle-btn:hover, .circle-btn:active {
+	background-color:#FFFFFF;
+	color: rgba(203,78,245,.8);
+	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	width: 100px;
+	height: 100px;
+	border-radius: 0%;
+}
+
+.circle-btn {
+	transition: all 0.5s ease;
+	transition-delay: .2s;
+	text-decoration: none;
+	font-weight: bold;
+	text-align:center;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	font-size: 30pt;
+}
